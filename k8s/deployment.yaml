@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistics-service
+spec:
+  selector:
+    matchLabels:
+      app: statistics-service
+  template:
+    metadata:
+      labels:
+        app: statistics-service
+    spec:
+      containers:
+        - name: statistics-service
+          image: nastss6tx5/asset-spy-statistics-service:latest
+          ports:
+            - containerPort: 8089
+          envFrom:
+            - configMapRef:
+                name: statistics-service-config
+            - secretRef:
+                name: statistics-service-secret
+          resources:
+            requests:
+              memory: "192Mi"
+              cpu: "100m"
+            limits:
+              memory: "384Mi"
+              cpu: "300m"

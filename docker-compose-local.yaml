@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:15
+    image: postgres:latest
     container_name: asset-spy-postgres
     environment:
       POSTGRES_DB: asset_spy_db
