@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: statistics-service-config
 data:
-  SERVER_PORT: "8092"
+  SERVER_PORT: "8089"
   SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/asset_spy_db"
   SPRING_DATASOURCE_USERNAME: "postgres"
   SPRING_DATASOURCE_DEFAULT_SCHEMA: "asset_spy_products_service_db"
